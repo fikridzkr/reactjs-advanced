@@ -1,14 +1,12 @@
 import axios from 'axios';
 
-const URL = 'https://kisahnabi-api-zhirrr.vercel.app/api/searchnabi?q=';
-export let dataNabi;
+export const URL = 'https://kisahnabi-api-zhirrr.vercel.app/api/searchnabi?q=';
 // menggunakan thencatch
-export const getApi = (nama) => {
+export const GetApi = (nama) => {
   axios
-    .get(`${URL}${nama}`)
+    .get(URL + nama)
     .then((req) => {
       console.log(req.data.nabi);
-      dataNabi = req.data.nabi;
     })
     .catch((err) => console.log(err));
 };
