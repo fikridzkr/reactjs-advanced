@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 100px;
+}
+
+.card {
+  border-radius: 100px;
+  width: 600px;
+  background-color: $primaryColor;
+  padding: 10px 0;
+  color: $textColor;
+  box-shadow: 4px 6px 28px -8px rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 4px 6px 28px -8px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 4px 6px 28px -8px rgba(0, 0, 0, 0.85);
+}

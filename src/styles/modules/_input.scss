@@ -1,0 +1,19 @@
+.input {
+  border: none;
+  padding: 10px 5px;
+  margin-bottom: 5px;
+  background-color: $primaryColor;
+  color: $textColor;
+  width: 50%;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: $textColor;
+    opacity: 1;
+  }
+
+  &::-ms-input-placeholder {
+    color: $textColor;
+  }
+}
