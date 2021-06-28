@@ -4,7 +4,6 @@ import Button from "./components/Button";
 const Login = () => {
     const [auth, setAuth] = useState({username:'', password:''})
     const {username, password} = auth
-    const [isLogged, setIsLogged] = useState(false)
 
     const handleChange= (e) => {
     const {name, value} = e.target
@@ -17,7 +16,7 @@ const Login = () => {
     const loginHandler = (e) => {
         e.preventDefault()
      if(username === 'user' && password === 'admin123'){
-         setIsLogged(true)
+        
      }
     }
     return (
