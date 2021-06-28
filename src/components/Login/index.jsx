@@ -2,24 +2,30 @@ import React, {useState} from 'react'
 import Input from "./components/Input";
 import Button from "./components/Button";
 const Login = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const usernameHandler = (event) => {
-        setUsername(event.target.value)
-    }
-    const passwordHandler = (event) => {
-        setPassword(event.target.value)
+    const [auth, setAuth] = useState({username:'', password:''})
+    const {username, password} = auth
+    const [isLogged, setIsLogged] = useState(false)
+
+    const handleChange= (e) => {
+    const {name, value} = e.target
+    setAuth((prev) => ({
+        ...prev,
+        [name] :value
+    }))
     }
 
-    const loginHandler = (event) => {
-
+    const loginHandler = (e) => {
+        e.preventDefault()
+     if(username === 'user' && password === 'admin123'){
+         setIsLogged(true)
+     }
     }
     return (
         <div className='card'>
             <h1 >Login</h1>
-            <form onSubmit={loginHandler}>
-            <Input type='text' name='username' placeholder='Masukkan Username Anda' className='input' onChange={usernameHandler}/>
-            <Input type='password' name='password' placeholder='Masukkan Password Anda' className='input' onChange={passwordHandler}/>
+            <form action='' onSubmit={loginHandler}>
+            <Input type='text' name='username' placeholder='Masukkan Username Anda' className='input' onChange={handleChange} defaultValue={username}/>
+            <Input type='password' name='password' placeholder='Masukkan Password Anda' className='input' onChange={handleChange} defaultValue={password}/>
             <Button type='submit' className='btn'>Login</Button>
             </form>
         </div>
