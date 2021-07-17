@@ -1,5 +1,5 @@
 import React from 'react';
-import './Counter.css';
+import classes from './Counter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { counterActions } from './CounterSlice';
 const Home = () => {
@@ -20,14 +20,14 @@ const Home = () => {
     dispatch(counterActions.toggle());
   };
   return (
-    <div className="counter-div">
-      <h1>Counter</h1>
+    <main className={classes.counter}>
+      <h1>Redux Counter</h1>
       {showCounter && <h5>{counter}</h5>}
       <button onClick={() => incrementHandler()}>Tambah</button>
       <button onClick={() => increaseHandler()}>Tambah 5</button>
       <button onClick={() => decrementHandler()}>Kurang</button>
-      <button onClick={() => toggleCounterHandler()}>Toggle Counter</button>
-    </div>
+      <button onClick={toggleCounterHandler}>Toggle Counter</button>
+    </main>
   );
 };
 
